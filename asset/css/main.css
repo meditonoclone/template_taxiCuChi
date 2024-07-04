@@ -1,0 +1,27 @@
+:root{
+    --main-color: #206F30;
+}
+
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0
+}
+
+header.grid{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 120px;
+    padding: 60px;
+
+}
+footer.grid{
+    background-color: black;
+    color: white;
+    padding: 60px;
+}
+
+.logo{
+    display: inline-block;
+}
