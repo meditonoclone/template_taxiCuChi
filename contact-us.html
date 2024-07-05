@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href=" ./asset/css/reset.css" rel="stylesheet">
-    <link href="./asset/font/fontawesome-free-6.5.2-web/css/fontawesome.css" rel="stylesheet" />
-    <link href="./asset/font/fontawesome-free-6.5.2-web/css/brands.css" rel="stylesheet" />
-    <link href="./asset/font/fontawesome-free-6.5.2-web/css/solid.css" rel="stylesheet" />
-    <link href=" ./asset/css/grid.css" rel="stylesheet">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./asset/css/home.css">
-    <link href="./asset/css/main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -83,7 +79,8 @@
                         <label for="passReset">Mật khẩu</label>
                         <input name="passReset" id="passReset" type="password" placeholder="Mật khẩu">
                         <label for="checkPassReset">Nhập lại mật khẩu</label>
-                        <input name="checkPassReset" id="checkPassReset" type="password" placeholder="Nhập lại mật khẩu">
+                        <input name="checkPassReset" id="checkPassReset" type="password"
+                            placeholder="Nhập lại mật khẩu">
                         <button type="submit">XÁC NHẬN</button>
                         <a class="signIn" href="#">Đăng nhập</a>
                         <a class="signUp" href="#">Đăng ký</a>
@@ -350,7 +347,69 @@
         </footer>
     </div>
     <script src="./asset/js/script.js"></script>
+    <main>
+        <main>
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Phần nội dung khác giữ nguyên -->
+                    <div class="booking-section">
+                        <h2>GỬI TIN NHẮN</h2>
+                        <form id="booking-form" class="booking-form">
+                            <input type="text" id="name" placeholder="Họ và tên" pattern="[A-Za-zÀ-ỹ\s]+" required>
+                            <input type="text" id="name" placeholder="Email" pattern="[A-Za-zÀ-ỹ\s]+" required>
+                            <input type="tel" id="phone" placeholder="Số điện thoại" pattern="[0-9]*" required>
+                            <button type="submit" class="btn btn-orange">GỬI TIN NHẮN</button>
+                        </form>
+                        <div id="booking-success" style="display: none; color: green; margin-top: 10px;">
+                            Đã gửi thành công xin cảm ơn!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('booking-form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    var phone = document.getElementById('phone');
+                    var name = document.getElementById('name');
+
+                    // Kiểm tra số điện thoại
+                    if (!/^[0-9]+$/.test(phone.value)) {
+                        alert('Số điện thoại chỉ được chứa số.');
+                        return;
+                    }
+
+                    // Kiểm tra tên
+                    if (!/^[A-Za-zÀ-ỹ\s]+$/.test(name.value)) {
+                        alert('Họ và tên chỉ được chứa chữ cái và khoảng trắng.');
+                        return;
+                    }
+
+                    // Nếu mọi thứ hợp lệ, hiển thị thông báo thành công
+                    document.getElementById('booking-success').style.display = 'block';
+
+                    // Reset form
+                    this.reset();
+                });
+            </script>
+
+            <script>
+                document.getElementById('booking-form').addEventListener('submit', function (e) {
+                    e.preventDefault(); // Ngăn chặn form gửi đi theo cách thông thường
+
+                    // Ở đây bạn có thể thêm code để gửi dữ liệu form đến server
+                    // Ví dụ: sử dụng fetch() để gửi request AJAX
+
+                    // Hiển thị thông báo thành công
+                    document.getElementById('booking-success').style.display = 'block';
+
+                    // Reset form
+                    this.reset();
+                });
+            </script>
+            </main>
+
 </body>
 
-
-</html> 
+</html>

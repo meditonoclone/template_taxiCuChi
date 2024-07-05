@@ -8,7 +8,14 @@
     padding: 0;
     font-family: "Helvetica Neue",Helvetica,Arial
 }
+body{
+    padding: 0;
+    background-color: rgba(0,0,0,0.2);
+}
 
+.app {
+    background-color: white;
+}
 a {
     color: white;
     text-decoration: none;
@@ -17,7 +24,7 @@ a {
 
 footer{
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url("../images/bg-footer.jpeg");
+    url("../images/map.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -59,6 +66,9 @@ footer>div:first-child img{
 header {
   background-color: #333;
   padding: 10px 23px;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
 nav {
@@ -69,6 +79,7 @@ nav {
 
 .logo img {
   height: 40px;
+  margin-left: 50px;
 }
 
 ul {
@@ -115,7 +126,8 @@ ul {
     display: flex;
     align-items: center;
 }
-.rightNav a:nth-child(2){
+.rightNav button{
+    color: white;
     height: 40px;
     width: 40px;
     border-radius: 8%;
@@ -124,6 +136,93 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.rightNav a:first-child{
+    font-weight:bold;
+    display: inline-block;
+    height: 48px;
+    background-color: red;
+    padding: 0 12px;
+    line-height: 48px;
+    border-radius: 5px;
+    animation: changeColor 1s infinite;
+}
+
+#signIn, #signUp, #resetPass{
+    position: fixed;
+    z-index: 1;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.overLay{
+    height: 100%;
+    width: 100%;
+}
+.signInForm, .signUpForm, .resetPassForm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    height: 500px;
+    width: 500px;
+    display :flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.signInForm label, .signUpForm label, .resetPassForm label{
+    color:gray;
+    font-size: large;
+}
+.signInForm form, .signUpForm form, .resetPassForm form{
+    width: 80%;
+}
+.signInForm form input, lable, .signUpForm form input, lable, .resetPassForm form input, lable{
+    display:block;
+    width: calc(100% - 24px);
+    margin-bottom: 20px;
+}
+
+.signInForm button, .signUpForm button, .resetPassForm button{
+    width: calc(100% - 24px);
+    background-color: #00a54f;
+    color: white;
+    font-size: large;
+    border: #00a54f solid 1px;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.signInForm button:hover, .signUpForm button:hover, .resetPassForm button:hover {
+    background-color: #006d35;
+    cursor: pointer;
+}
+
+.resetPassForm a:last-child, .signInForm a:last-child{
+    float: right;
+
+}
+
+.signInForm a, .signUpForm a, .resetPassForm a{
+    color: black;
+}
+
+@keyframes changeColor {
+    0% { background-color: red; }
+    50% { background-color: blue; }
+    75% { background-color: green; }
+    100% { background-color: red; }
 }
 
 
